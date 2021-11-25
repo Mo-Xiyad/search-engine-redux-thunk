@@ -50,7 +50,7 @@ export const searchResultsAction = (query = "developer", isLoading) => {
             type: LOADING_DATA,
             payload: false,
           });
-        }, 2000);
+        }, 1000);
       } else {
         console.log("Houston, we got an error :(");
         // we can also dispatch ANOTHER action here for the error!
