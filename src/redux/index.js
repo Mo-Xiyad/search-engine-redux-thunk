@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import mainReducer from "../reducers";
+import mainReducer from "./reducers";
 
 export const initialState = {
   favorites: [],

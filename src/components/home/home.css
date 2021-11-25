@@ -9,6 +9,7 @@
 .well {
   border: 0;
   padding: 20px;
+  margin-bottom: 10px;
   min-height: 63px;
   background: rgba(221, 238, 245, 0.459);
   box-shadow: none;
@@ -24,5 +25,8 @@
 }
 
 .selected-job {
-  background-color: aqua;
+  background-color: rgba(8, 238, 238, 0.123);
+  font-weight: small;
+  margin: -1px;
+  margin-bottom: 20px;
 }

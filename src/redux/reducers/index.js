@@ -1,4 +1,4 @@
-import { initialState } from "../store";
+import { initialState } from "../index";
 import {
   ADD_TO_FAVORITES,
   REMOVE_ONE_BY_ONE,
