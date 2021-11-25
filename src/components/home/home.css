@@ -1,3 +1,19 @@
+.mainName {
+  margin-top: 4%;
+}
+.mainName > h1 {
+  font-weight: bolder;
+  color: #ccc;
+  font-size: 150px;
+  font-family: "Times New Roman", Times, serif;
+}
+.mainName > span {
+  font-weight: bolder;
+  color: rgb(248, 192, 192);
+  font-size: 50px;
+  font-family: monospace;
+  margin-left: 10px;
+}
 .search-result .title h3 {
   margin: 0 0 15px;
   color: #333;

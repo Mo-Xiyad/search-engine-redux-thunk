@@ -46,6 +46,12 @@ const Home = ({
 
   return (
     <div className="container h-100">
+      <div className="d-flex justify-content-center">
+        <div className="mainName">
+          <h1 className="d-inline">Dream</h1>
+          <span>Search</span>
+        </div>
+      </div>
       <SearchBar getSearchedData={getSearchedData} />
       <Link to={"/favorites"}>
         <Button>Check out Favorites</Button>
