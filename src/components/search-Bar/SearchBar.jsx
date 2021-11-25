@@ -15,11 +15,11 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-function SearchBar({ performSearch, isLoading }) {
+function SearchBar({ performSearch }) {
   const [query, setQuery] = useState();
 
   useEffect(() => {
-    performSearch(query, isLoading);
+    performSearch(query);
   }, [query]);
 
   return (
@@ -38,7 +38,7 @@ function SearchBar({ performSearch, isLoading }) {
             />
             <Button
               className="search_icon d-inline"
-              onClick={() => performSearch(query, isLoading)}
+              onClick={() => performSearch(query)}
             >
               <i className="fas fa-search" />
             </Button>

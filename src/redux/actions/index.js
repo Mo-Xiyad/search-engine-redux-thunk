@@ -31,6 +31,10 @@ export const removeSelectedFavorites = (itemToRemove) => ({
 export const searchResultsAction = (query = "developer", isLoading) => {
   return async (dispatch) => {
     try {
+      dispatch({
+        type: LOADING_DATA,
+        payload: true,
+      });
       const response = await fetch(
         `https://strive-jobs-api.herokuapp.com/jobs?search=${query}&limit=10&skip=2`
       );
@@ -44,9 +48,20 @@ export const searchResultsAction = (query = "developer", isLoading) => {
         setTimeout(() => {
           dispatch({
             type: LOADING_DATA,
-            payload: !isLoading,
+            payload: false,
           });
-        }, 1000);
+        }, 2000);
+      } else {
+        console.log("Houston, we got an error :(");
+        // we can also dispatch ANOTHER action here for the error!
+        dispatch({
+          type: FETCH_DATA_ERROR,
+          payload: true,
+        });
+        dispatch({
+          type: LOADING_DATA,
+          payload: false,
+        });
       }
     } catch (error) {
       dispatch({
@@ -55,7 +70,7 @@ export const searchResultsAction = (query = "developer", isLoading) => {
       });
       dispatch({
         type: LOADING_DATA,
-        payload: !isLoading,
+        payload: false,
       });
     }
   };
