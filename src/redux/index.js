@@ -5,6 +5,7 @@ import thunk from "redux-thunk";
 
 const workingMiddleware =
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
 export const initialState = {
   searchResults: {
     data: [],

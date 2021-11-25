@@ -8,28 +8,13 @@ import { search } from "./helpers/index";
 import Favorites from "./components/favorites/Favorites";
 
 function App() {
-  const [data, setData] = useState([]);
-  const [refresh, setRefresh] = useState(false);
-
-  const getSearchedData = async (query) => {
-    const data = await search(query);
-    setData(data);
-    setRefresh(true);
-  };
-
-  useEffect(() => {
-    // getSearchedData();
-    console.log(data.data);
-  }, [refresh]);
+  // useEffect(() => {}, []);
 
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route
-            path="/"
-            element={<Home data={data} getSearchedData={getSearchedData} />}
-          />
+          <Route path="/" element={<Home />} />
           <Route path="/favorites" element={<Favorites />} />
           <Route path="/favorites/jobLists/:company" element={<Profile />} />
           <Route path="/jobLists/:company" element={<Profile />} />

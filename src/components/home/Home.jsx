@@ -10,6 +10,7 @@ import { addToFavorites, removeSelectedFavorites } from "../../redux/actions";
 
 const mapStateToProps = (state) => ({
   favorites: state.favoritesList.list,
+  data: state.searchResults.data,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -50,8 +51,8 @@ const Home = ({
         <Button>Check out Favorites</Button>
       </Link>
       <div className="container mt-5">
-        {data.data &&
-          data.data.map((result, i) => (
+        {data &&
+          data.map((result, i) => (
             <div
               className={
                 favorites.map((el) => el._id).includes(result._id)

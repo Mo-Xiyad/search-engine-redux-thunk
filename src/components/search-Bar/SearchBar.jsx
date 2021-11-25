@@ -2,12 +2,24 @@ import React from "react";
 import { Button, Form } from "react-bootstrap";
 import "./search-bar.css";
 import { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { searchResultsAction } from "../../redux/actions";
 
-function SearchBar({ getSearchedData }) {
+const mapStateToProps = (state) => ({
+  isLoading: state.searchResults.isLoading,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  performSearch: (query, isLoading) => {
+    dispatch(searchResultsAction(query, isLoading));
+  },
+});
+
+function SearchBar({ performSearch, isLoading }) {
   const [query, setQuery] = useState();
 
   useEffect(() => {
-    getSearchedData(query);
+    performSearch(query, isLoading);
   }, [query]);
 
   return (
@@ -21,13 +33,12 @@ function SearchBar({ getSearchedData }) {
               value={query}
               onChange={(e) => {
                 setQuery(e.target.value);
-                // getSearchedData(query);
               }}
               placeholder="Search..."
             />
             <Button
               className="search_icon d-inline"
-              onClick={() => getSearchedData(query)}
+              onClick={() => performSearch(query, isLoading)}
             >
               <i className="fas fa-search" />
             </Button>
@@ -38,4 +49,4 @@ function SearchBar({ getSearchedData }) {
   );
 }
 
-export default SearchBar;
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
