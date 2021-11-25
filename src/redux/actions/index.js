@@ -1,6 +1,7 @@
 export const ADD_TO_FAVORITES = "ADD_TO_CART";
 export const REMOVE_ONE_BY_ONE = "REMOVE_ONE_BY_ONE";
 export const REMOVE_SELECTED_FROM_FAVORITES = "REMOVE_SELECTED_FROM_FAVORITES";
+export const FETCH_DATA_FROM_API = "FETCH_DATA_FROM_API";
 
 export const addToFavorites = (itemToAdd) => ({
   type: ADD_TO_FAVORITES,

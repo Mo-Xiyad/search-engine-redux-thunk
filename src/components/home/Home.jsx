@@ -8,7 +8,9 @@ import { connect } from "react-redux";
 import { Button } from "react-bootstrap";
 import { addToFavorites, removeSelectedFavorites } from "../../redux/actions";
 
-const mapStateToProps = (state) => state;
+const mapStateToProps = (state) => ({
+  favorites: state.favoritesList.list,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   addItem: (itemToAdd) => {

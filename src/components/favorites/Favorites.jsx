@@ -8,7 +8,9 @@ import {
   REMOVE_ONE_BY_ONE,
 } from "../../redux/actions";
 
-const mapStateToProps = (state) => state;
+const mapStateToProps = (state) => ({
+  favorites: state.favoritesList.list,
+});
 
 // const mapDispatchToProps = (dispatch) => ({
 //   removeOneAtTime: (itemToRemove) => {
