@@ -51,10 +51,10 @@ const Home = ({ data, addItem, favorites, removerAllFormFav, isLoading }) => {
       <SearchBar />
       {isLoading ? (
         <div className="d-flex justify-content-center mt-5">
-          <h1>
+          <div className="mx-3">
             <Spinner animation="border" variant="danger" />
-            loading...
-          </h1>
+          </div>
+          <h3>Loading...</h3>
         </div>
       ) : (
         <div className="container mt-5">

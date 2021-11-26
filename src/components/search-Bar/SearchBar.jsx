@@ -10,8 +10,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  performSearch: (query, isLoading) => {
-    dispatch(searchResultsAction(query, isLoading));
+  performSearch: (query) => {
+    dispatch(searchResultsAction(query));
   },
 });
 
